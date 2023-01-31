@@ -1,5 +1,5 @@
 {"version": 4,
- "packagesDir": "./lake-packages",
+ "packagesDir": "lake-packages",
  "packages":
  [{"git":
    {"url": "https://github.com/xubaiw/CMark.lean",
@@ -28,7 +28,7 @@
   {"git":
    {"url": "https://github.com/leanprover-community/mathlib4.git",
     "subDir?": null,
-    "rev": "021406f062c275cc225b238dc2b254910315689d",
+    "rev": "fb5f6b71e4b5b3e163a4b28fa1007ebf0f20f12d",
     "name": "mathlib",
     "inputRev?": "master"}},
   {"git":
@@ -40,7 +40,7 @@
   {"git":
    {"url": "https://github.com/JLimperg/aesop",
     "subDir?": null,
-    "rev": "72610cec1cd686884a08704f5fa91b45262136f9",
+    "rev": "ccff5d4ae7411c5fe741f3139950e8bddf353dea",
     "name": "aesop",
     "inputRev?": "master"}},
   {"git":
@@ -58,12 +58,12 @@
   {"git":
    {"url": "https://github.com/leanprover/std4",
     "subDir?": null,
-    "rev": "570141abe5886d697b2544630e8e0e3aec9df240",
+    "rev": "cda27d551340756d5ed6f9b83716a9db799c5537",
     "name": "std",
     "inputRev?": "main"}},
   {"git":
    {"url": "https://github.com/siddhartha-gadgil/LeanAide.git",
     "subDir?": null,
-    "rev": "dff5657b52c7512fc7e79e17312803380cd42dfe",
+    "rev": "6caf44217b2ac702eb75022237035f6e2eb2f034",
     "name": "leanaide",
     "inputRev?": "mathlib4"}}]}
