@@ -6,10 +6,10 @@
 * the command `lake exe lab1` should now work and give details about your registration.
 * commit and push your changes to your repo.
 -/
-def name?: Option String := none
-def github?: Option String := none
-def zulip?: Option String := none
-def lab_repo?: Option String := none
+def name?: Option String := "SNEHASISH GHOSH"
+def github?: Option String := "optimisticexquisite"
+def zulip?: Option String := "snehasishg@iisc.ac.in"
+def lab_repo?: Option String := "https://github.com/optimisticexquisite/proofs-and-programs-2023-lab"
 
 def details? : Option String := do
   let name ← name?
