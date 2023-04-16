@@ -18,11 +18,13 @@ universe u
 
 /-- Convert a `Vector` to a `Vec` -/
 def Vec.ofVector {α : Type u}: (n : ℕ) →  Vector α n → Vec α n 
-| _, _ => sorry
+| 0, _ => Vec.nil
+| n+1, ⟨x :: xs, h⟩ => Vec.cons x (Vec.ofVector n ⟨xs, Nat.succ.inj h⟩)
 
 /-- Convert a `Vec` to a `Vector` -/
 def Vec.toVector {α : Type u}: (n : ℕ) →  Vec α n → Vector α n
-| _, _ => sorry
+| 0, _ => Vector.nil
+| n+1, Vec.cons x xs => ⟨x :: xs.to_list, by rw [Vec.length, List.length_to_list]⟩
 
 /-- Mapping a `Vec` to a `Vector` and back gives the original `Vec` -/
 theorem Vec.ofVector.toVector {α : Type u} (n : ℕ) (v : Vec α n) :
