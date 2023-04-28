@@ -39,5 +39,12 @@ theorem Vec.ofVector.toVector {α : Type u} (n : ℕ) (v : Vec α n) :
 
 /-- Mapping a `Vector` to a `Vec` and back gives the original `Vector` -/
 theorem Vec.toVector.ofVector {α : Type u} (n : ℕ) (v : Vector α n) :
-  Vec.toVector n (Vec.ofVector n v) = v :=
+  Vec.toVector n (Vec.ofVector n v) = v := by
+  induction n with
+  | zero => simp [ofVector, toVector]
+  | succ n ih =>  simp [ofVector, toVector]
+    show ⟨v.val.tail, _⟩ = v
+    rw [← ih, v.property]
+    Vector.cons_head_tail
+
   
