@@ -29,18 +29,15 @@ def Vec.toVector {α : Type u}: (n : ℕ) →  Vec α n → Vector α n
 /-- Mapping a `Vec` to a `Vector` and back gives the original `Vec` -/
 theorem Vec.ofVector.toVector {α : Type u} (n : ℕ) (v : Vec α n) :
   Vec.ofVector n (Vec.toVector n v) = v := by
-  induction n with
-  | zero => 
-    cases v with
-    | nil => rfl
-  | succ n ih => 
-    cases v with
-    | cons x xs => 
-      simp [Vec.ofVector, Vec.toVector]
-      rw [ih, List.cons_to_list]
-      rfl
+  induction v with
+  | nil => rfl
+  | cons head tail h => 
+    simp only [toVector, ofVector, h]
+    congr
+
 
 
 /-- Mapping a `Vector` to a `Vec` and back gives the original `Vector` -/
 theorem Vec.toVector.ofVector {α : Type u} (n : ℕ) (v : Vector α n) :
-  Vec.toVector n (Vec.ofVector n v) = v := sorry
+  Vec.toVector n (Vec.ofVector n v) = v :=
+  
