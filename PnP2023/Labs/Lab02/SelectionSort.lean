@@ -72,3 +72,5 @@ termination_by _ _ => l.length
 decreasing_by 
   apply remove_mem_length (smallest_in_list l c)
 
+-- All correct: 30/30
+
