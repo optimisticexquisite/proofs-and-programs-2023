@@ -9,7 +9,7 @@
 def name?: Option String := "SNEHASISH GHOSH"
 def github?: Option String := "optimisticexquisite"
 def zulip?: Option String := "snehasishg@iisc.ac.in"
-def lab_repo?: Option String := "https://github.com/optimisticexquisite/proofs-and-programs-2023"
+def lab_repo?: Option String := "https://github.com/optimisticexquisite/proofs-and-programs-2023-lab"
 
 def details? : Option String := do
   let name ← name?
