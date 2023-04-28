@@ -24,11 +24,22 @@ def Vec.ofVector {α : Type u}: (n : ℕ) →  Vector α n → Vec α n
 /-- Convert a `Vec` to a `Vector` -/
 def Vec.toVector {α : Type u}: (n : ℕ) →  Vec α n → Vector α n
 | 0, _ => Vector.nil
-| n+1, Vec.cons x xs => ⟨x :: xs.to_list, by rw [Vec.length, List.length_to_list]⟩
+| n+1, Vec.cons x xs => ⟨x :: xs.to_list, by rw [List.length_cons, xs.property]⟩
 
 /-- Mapping a `Vec` to a `Vector` and back gives the original `Vec` -/
 theorem Vec.ofVector.toVector {α : Type u} (n : ℕ) (v : Vec α n) :
-  Vec.ofVector n (Vec.toVector n v) = v := sorry
+  Vec.ofVector n (Vec.toVector n v) = v := by
+  induction n with
+  | zero => 
+    cases v with
+    | nil => rfl
+  | succ n ih => 
+    cases v with
+    | cons x xs => 
+      simp [Vec.ofVector, Vec.toVector]
+      rw [ih, List.cons_to_list]
+      rfl
+
 
 /-- Mapping a `Vector` to a `Vec` and back gives the original `Vector` -/
 theorem Vec.toVector.ofVector {α : Type u} (n : ℕ) (v : Vector α n) :
